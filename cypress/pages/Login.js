@@ -1,8 +1,7 @@
-class LoginPage {
-    visit() {
-        cy.visit('https://www.edu.goit.global/account/login');
-    }
+import HomePage from "../pages/HomePage";
 
+class LoginPage {
+    
 
     getEmailInput() {
         return cy.get('#user_email');
@@ -23,7 +22,8 @@ class LoginPage {
 
 
     login(email, password) {
-        this.visit();
+        const homePage = new HomePage()
+        homePage.visit();
         this.getEmailInput().type(email);
         this.getPasswordInput().type(password);
         this.getLoginButton().click();
