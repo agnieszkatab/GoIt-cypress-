@@ -15,10 +15,7 @@ class LoginPage {
         return cy.get('.css-1jphuq5');
     }
 
-    getMenuButton() {
-        return cy.get('#open-navigation-menu-mobile');
-    }
-
+  
 
 
     login(email, password) {
@@ -27,7 +24,6 @@ class LoginPage {
         this.getEmailInput().type(email);
         this.getPasswordInput().type(password);
         this.getLoginButton().click();
-        this.getMenuButton().click();
     }
 }
 
